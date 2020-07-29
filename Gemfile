@@ -10,7 +10,7 @@ gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -37,6 +37,30 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # binding.pryで必要
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  # テスト
+  gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  # テスト用データ
+  gem 'factory_bot_rails', '~> 4.10.0'
+  gem 'faker'
+  # コーディング規約, bundlerを使用するためfalse
+  gem 'rails_best_practices', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rails_config'
+    # デバッグ用
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :tools do
+  # Migrationファイル圧縮に必要(使わなくても良い)
+  gem 'squasher', '>= 0.6.0'
 end
 
 group :development do
@@ -51,3 +75,32 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# ログイン機能
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
+# 画像アップロード
+gem 'carrierwave'
+gem 'fog-aws'
+gem 'mini_magick'
+
+# FontAwesome
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
+
+gem 'haml-rails'
+gem 'kaminari'
+gem 'sass-rails'
+
+# jQueryを使用するために必要
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+# パンクズリスト使用のために必要
+gem 'gretel'
+
+# カレンダー使用する為
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
