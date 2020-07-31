@@ -91,6 +91,7 @@ gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 
 gem 'haml-rails'
+gem 'erb2haml'
 gem 'kaminari'
 gem 'sass-rails'
 

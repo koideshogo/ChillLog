@@ -97,6 +97,8 @@ GEM
       devise (>= 4.7.1)
     devise-i18n-views (0.3.7)
     diff-lcs (1.4.4)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.9.0)
     erubis (2.7.0)
     excon (0.76.0)
@@ -383,6 +385,7 @@ DEPENDENCIES
   devise
   devise-i18n
   devise-i18n-views
+  erb2haml
   factory_bot_rails (~> 4.10.0)
   faker
   fog-aws
