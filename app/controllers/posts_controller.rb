@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def index
   end
 
@@ -21,9 +22,22 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post, notice:'成長記録が更新されました'
+    else
+      flash.now[:alert] = '更新に失敗しました'
+      render :edit
+    end
   end
 
-  def delete
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
   end
 
   private

@@ -1,4 +1,4 @@
-class InitSchema < ActiveRecord::Migration
+class InitSchema < ActiveRecord::Migration[5.1]
   def up
     create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
       t.string "title"
