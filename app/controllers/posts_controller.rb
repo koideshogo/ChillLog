@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -12,8 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      binding.pry
-      redirect_to root_path, notice: '成長を記録しました'
+      redirect_to @post, notice: '成長を記録しました'
     else
       flash.now[:alert] = '成長の記録に失敗しました'
       render 'new'

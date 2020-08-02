@@ -1,2 +1,6 @@
-%h1 Posts#show
-%p Find me in app/views/posts/show.html.haml
+%h1
+  2020年8月02日の成長記録
+  = image_tag(image_url("#{@post.image}"))
+  = @post.title
+  = @post.created_at.strftime('%Y/%m/%d')
+  = @post.text
