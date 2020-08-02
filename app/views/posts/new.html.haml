@@ -1,0 +1,14 @@
+
+.post-wrapper
+  .post-title
+    %h1
+      成長を記録する
+  .form-wrapper
+    = form_with model: @post, local: true do |form|
+      = form.label :タイトル
+      = form.text_field :title
+      = form.label :今日の1枚
+      = form.file_field :image
+      = form.label :今日の出来事
+      = form.text_area :text, size: "60x10"
+      = form.submit '成長を記録する'
