@@ -4,7 +4,7 @@
     %h1
       成長を記録する
   .form-wrapper
-    = form_with model: @post, local: true do |form|
+    = form_with model: @event, local: true do |form|
       = form.label :タイトル
       = form.text_field :title
       = form.label :今日の1枚
