@@ -1,0 +1,9 @@
+%h1
+  2020年8月02日の成長記録
+  = image_tag @event.image.url, size: "100x100"
+  = @event.title
+  = @event.created_at.strftime('%Y/%m/%d')
+  = @event.text
+
+  = link_to '編集', "/events/#{@event.id}/edit", method: :get
+  = link_to '削除', "/events/#{@event.id}", method: :delete

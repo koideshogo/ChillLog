@@ -1,6 +1,6 @@
 class InitSchema < ActiveRecord::Migration[5.1]
   def up
-    create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
       t.string "title"
       t.string "text"
       t.datetime "created_at", null: false
