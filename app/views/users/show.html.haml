@@ -1,0 +1,10 @@
+.mypage-warapper
+  .mypage-name
+    %h1
+      = @user.name + 'ママ'
+  .mypage-img
+    = image_tag @user.image.url, class:'myimg'
+  .mypage-logoutbtn
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete
+  .top-btn
+    = link_to 'Top', events_path
