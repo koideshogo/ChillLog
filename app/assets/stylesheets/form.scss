@@ -1,0 +1,61 @@
+.event-wrapper {
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.event-title {
+  text-align: center;
+}
+
+.form-inner {
+  margin: 0 auto;
+  width: 90%;
+}
+.form-box,.form-field,.form-area {
+  margin-bottom: 10px;
+}
+
+textarea {
+  resize: none;
+  margin-bottom: 50px;
+}
+
+.form-btn {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+
+  input {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;
+    margin-bottom: 50px;
+    border-radius: 3px;
+    width: 55vh;
+    color: white;
+    cursor: pointer;
+  }
+  .delete-btn {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: red;
+    margin-bottom: 50px;
+    border-radius: 3px;
+    width: 55vh;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: #FFF;
+    }
+  }
+}
+
+.top-btn {
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color: gray;
+  }
+}

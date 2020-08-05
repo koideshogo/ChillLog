@@ -12,12 +12,16 @@
         %br
         = form.label :今日の1枚, class:"form-label"
         %br
-        = form.file_field :image, id: :event_img
+        = form.file_field :image, id: :event_img, class:'form-field'
         %br
         = form.label :今日の出来事, class:"form-label"
         %br
-        = form.text_area :text, size: "110x10"
+        = form.text_area :text, size: "110x10", class:'form-area'
         %br
-        = form.submit '編集を適用する', class:"form-box"
+        .form-btn
+          .edit-btn
+            = form.submit '編集を適用する'
+          .delete-btn
+            = link_to '成長記録を削除する', "/events/#{@event.id}", method: :delete
   .top-btn
     = link_to 'Top', events_path
