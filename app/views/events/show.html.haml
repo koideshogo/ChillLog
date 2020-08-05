@@ -1,9 +1,19 @@
-%h1
-  2020年8月02日の成長記録
-  = image_tag @event.image.url, size: "100x100"
-  = @event.title
-  = @event.created_at.strftime('%Y/%m/%d')
-  = @event.text
+.show-wrapper
+  .show-inner
+    %h1.show-title
+      = @event.created_at.strftime('%Y年%m月%d日の成長記録')
+    .show-eventimg
+      = image_tag @event.image.url, size: "100x100", class:'eventimg'
+    %br
+    .show-event
+      .show-eventinner
+        .show-eventtitle
+          = @event.title
+        .show-eventday
+          = @event.created_at.strftime('%Y/%m/%d')
+    .show-eventtext
+      = @event.text
+    .show-edit
+      .show-editbtn
+        = link_to '成長記録を編集する', "/events/#{@event.id}/edit", method: :get
 
-  = link_to '編集', "/events/#{@event.id}/edit", method: :get
-  = link_to '削除', "/events/#{@event.id}", method: :delete
