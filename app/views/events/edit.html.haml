@@ -1,14 +1,23 @@
 
-.post-wrapper
-  .post-title
+.event-wrapper
+  .event-title
     %h1
       成長を記録する
   .form-wrapper
-    = form_with model: @event, local: true do |form|
-      = form.label :タイトル
-      = form.text_field :title
-      = form.label :今日の1枚
-      = form.file_field :image
-      = form.label :今日の出来事
-      = form.text_area :text, size: "60x10"
-      = form.submit '成長を記録する'
+    .form-inner
+      = form_with model: @event, local: true do |form|
+        = form.label :タイトル, class:"form-label"
+        %br
+        = form.text_field :title, class:"form-box"
+        %br
+        = form.label :今日の1枚, class:"form-label"
+        %br
+        = form.file_field :image, id: :event_img
+        %br
+        = form.label :今日の出来事, class:"form-label"
+        %br
+        = form.text_area :text, size: "110x10"
+        %br
+        = form.submit '編集を適用する', class:"form-box"
+  .top-btn
+    = link_to 'Top', events_path
