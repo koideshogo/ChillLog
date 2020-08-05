@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  
+  before_action :authenticate_user!
+  before_action :set_user, only: [:show, :index]
   def index
     @events = Event.all
   end
@@ -44,5 +45,8 @@ class EventsController < ApplicationController
   private
   def event_params
     params.require(:event).permit(:title, :text, :image).merge(user_id: current_user.id)
+  end
+  def set_user
+    @user = User.find(current_user.id)
   end
 end

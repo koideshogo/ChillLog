@@ -9,5 +9,5 @@
         = link_to "/events/new" do
           %i.fas.fa-file-signature
       .header-mypage
-        マイページ
+        = link_to (image_tag @user.image.url, class:'index-myimg'),  "users/#{@user.id}"
 #calendar
