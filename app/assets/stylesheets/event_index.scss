@@ -1,0 +1,44 @@
+.header-wrapper {
+  width: 100%;
+  position: fixed;
+  box-shadow: 0 3px 3px -2px rgba(0,0,0,.2), 0 3px 4px 0 rgba(0,0,0,.14), 0 1px 8px 0 rgba(0,0,0,.12);
+  background-color: #eceff1;
+  z-index: 1000;
+
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  a {
+  text-decoration: none;
+  color: black;
+  }
+}
+
+.header-contents {
+  display: flex;
+}
+
+.header-create {
+  margin-right: 15px;
+  i {
+    color: black;
+    font-size: 20px;
+  }
+}
+
+
+#calendar {
+  margin: 0 auto;
+  padding: 130px 10px 0;
+}
