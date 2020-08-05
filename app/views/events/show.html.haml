@@ -16,4 +16,5 @@
     .show-edit
       .show-editbtn
         = link_to '成長記録を編集する', "/events/#{@event.id}/edit", method: :get
-
+    .top-btn
+      = link_to 'Top', events_path
