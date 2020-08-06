@@ -24,11 +24,11 @@ class EventsController < ApplicationController
         if @event.save
           redirect_to "/events/#{@event.id}/done"
         else
-          flash.now[:alert] = '成長の記録に失敗しました'
+          flash.now[:notice] = '成長の記録に失敗しました'
           render 'new'
         end
       else
-        flash.now[:alert] = '同じ日にちの投稿が既に存在しています'
+        flash.now[:notice] = '同じ日にちの投稿が既に存在しています'
         render 'new'
       end
     end
@@ -37,9 +37,10 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update(event_params)
-      redirect_to @event, notice:'成長記録が更新されました'
+      flash[:notice] = '成長記録が更新されました'
+      redirect_to @event
     else
-      flash.now[:alert] = '更新に失敗しました'
+      flash.now[:notice] = '更新に失敗しました'
       render :edit
     end
   end
