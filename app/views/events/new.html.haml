@@ -3,25 +3,6 @@
   .event-title
     %h1
       成長を記録する
-  .form-wrapper
-    .form-inner
-      = form_with model: @event, local: true do |form|
-        = form.label :タイトル, class:"form-label"
-        %br
-        = form.text_field :title, class:"form-box"
-        %br
-        = form.label :date, '日にち', class:'form-label'
-        %br
-        = form.date_field :date, class:'form-field'
-        %br
-        = form.label :今日の1枚, class:"form-label"
-        %br
-        = form.file_field :image, id: :event_img, class:'form-field'
-        %br
-        = form.label :今日の出来事, class:"form-label"
-        %br
-        = form.text_area :text, size: "120x10", class:'form-area'
-        %br
-        = form.submit '成長を記録する', class:"form-box"
+  = render './shared/form'
   .top-btn
     = link_to 'Top', events_path

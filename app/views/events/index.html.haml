@@ -1,14 +1,3 @@
 = render './shared/flash'
-.header-wrapper
-  .header-inner
-    .header
-      = link_to "Chill Log", events_path
-    .header-title
-      = @child.name + "ちゃんの成長記録"
-    .header-contents
-      .header-create
-        = link_to "/events/new" do
-          %i.fas.fa-file-signature
-      .header-mypage
-        = link_to (image_tag @user.image.url, class:'index-myimg'),  "users/#{@user.id}"
+= render './shared/header'
 #calendar
