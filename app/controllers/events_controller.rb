@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      redirect_to @event, notice: '成長を記録しました'
+      redirect_to "/events/#{@event.id}/done"
     else
       flash.now[:alert] = '成長の記録に失敗しました'
       render 'new'
@@ -40,6 +40,11 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find(params[:id])
     @event.destroy
+  end
+
+  def done
+    @event = Event.find(params[:id])
+
   end
 
   private
