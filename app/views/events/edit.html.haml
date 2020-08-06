@@ -1,5 +1,4 @@
 .event-wrapper
-  = render './shared/flash'
   .event-title
     %h1
       成長を記録する
@@ -16,12 +15,12 @@
         %br
         = form.label :今日の出来事, class:"form-label"
         %br
-        = form.text_area :text, size: "12/0x10", class:'form-area'
+        = form.text_area :text, size: "120x10", class:'form-area'
         %br
         .form-btn
           .edit-btn
             = form.submit '編集を適用する'
           .delete-btn
-            = link_to '成長記録を削除する', "/events/#{@event.id}", method: :delete, data: {confirm: "削除しますか？"}
+            = link_to '成長記録を削除する', "/events/#{@event.id}", method: :delete
   .top-btn
     = link_to 'Top', events_path
