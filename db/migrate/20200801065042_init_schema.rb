@@ -6,6 +6,7 @@ class InitSchema < ActiveRecord::Migration[5.1]
       t.datetime "created_at", null: false
       t.datetime "updated_at", null: false
       t.string "image"
+      t.string "date"
       t.integer "user_id"
     end
     create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
