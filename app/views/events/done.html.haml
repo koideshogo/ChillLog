@@ -1,0 +1,10 @@
+.done-wrapper
+  .done-inner
+    .done-title
+      %h1 成長記録投稿完了しました
+    .done-img
+      = image_tag @event.image.url, class:'myimg'
+    .done-comment
+      %p まま、いつも、ありがとう。
+    .top-btn
+      = link_to 'Top', events_path

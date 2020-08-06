@@ -5,6 +5,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users, only: [:show]
-  resources :events
+  resources :events do
+    member do
+      get :done
+    end
+  end
 
 end

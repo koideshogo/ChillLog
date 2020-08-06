@@ -1,0 +1,29 @@
+.done-wrapper {
+  text-align: center;
+}
+
+.done-comment {
+  position: relative;
+  display: inline-block;
+  padding: 0 5px;
+  width: 50%;
+  height: 90px;
+  line-height: 60px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a4eb84;
+  border-radius: 50%;
+  box-sizing: border-box;
+  :before {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    margin-left: -15px;
+    border: 15px solid transparent;
+    border-bottom: 15px solid #a4eb84;
+    z-index: 0;
+  }
+}
