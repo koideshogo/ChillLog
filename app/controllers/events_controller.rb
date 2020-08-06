@@ -1,8 +1,11 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :index]
+  before_action :set_events, only: [:create]
   def index
-    @events = Event.all
+    if user_signed_in?
+      @events = Event.where(user_id: current_user)
+    end
   end
 
   def show
@@ -15,11 +18,19 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    if @event.save
-      redirect_to "/events/#{@event.id}/done"
-    else
-      flash.now[:alert] = '成長の記録に失敗しました'
-      render 'new'
+    @event_date = Event.where(date: "#{@event.date}")
+    if current_user.id === @event.user_id
+      unless @event_date.present?
+        if @event.save
+          redirect_to "/events/#{@event.id}/done"
+        else
+          flash.now[:alert] = '成長の記録に失敗しました'
+          render 'new'
+        end
+      else
+        flash.now[:alert] = '同じ日にちの投稿が既に存在しています'
+        render 'new'
+      end
     end
   end
 
@@ -53,5 +64,9 @@ class EventsController < ApplicationController
   end
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  def set_events
+    @events = Event.all
   end
 end
