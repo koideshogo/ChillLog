@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :index]
   before_action :set_events, only: [:create]
-  before_action :set_child, only: [:index]
+  before_action :set_child, only: [:index, :done]
 
   def index
     if user_signed_in?
