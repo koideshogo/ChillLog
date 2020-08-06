@@ -19,6 +19,46 @@
 }
 
 
+.header-create:hover .write {
+  display: inline;
+}
+.write {
+  position: absolute;
+  display: none;
+  padding: 2px;
+  color: aliceblue;
+  border-radius: 5px;
+  background-color:gray;
+  width:100px;
+  top: 60px;
+  font-size: 5px;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  right: 80px;
+}
+
+
+.header-mypage:hover .show {
+  display: inline;
+}
+.show {
+  position: absolute;
+  display: none;
+  padding: 2px;
+  color: aliceblue;
+  border-radius: 5px;
+  background-color:gray;
+  width:100px;
+  top: 60px;
+  font-size: 5px;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  right: 25px;
+}
+
+
 .header {
   a {
   text-decoration: none;

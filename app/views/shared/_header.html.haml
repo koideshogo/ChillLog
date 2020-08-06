@@ -8,5 +8,7 @@
       .header-create
         = link_to "/events/new" do
           %i.fas.fa-file-signature
+            %span.write 成長を記録する
       .header-mypage
         = link_to (image_tag @user.image.url, class:'index-myimg'),  "users/#{@user.id}"
+        %span.show マイページ
