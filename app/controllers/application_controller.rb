@@ -13,7 +13,8 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image])
+    # binding.pry
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image, [child_attributes: [:name, :user_id]]])
   end
   def set_current_user
     @set_current_user =User.find_by(id: session[:user_id])

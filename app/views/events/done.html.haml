@@ -6,5 +6,6 @@
       = image_tag @event.image.url, class:'myimg'
     .done-comment
       %p まま、いつも、ありがとう。
+      = @child.name + "より"
     .top-btn
       = link_to 'Top', events_path

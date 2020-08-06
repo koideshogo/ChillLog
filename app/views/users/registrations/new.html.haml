@@ -9,6 +9,11 @@
         %br/
         = f.text_field :name, autofocus: true, autocomplete: "name"
       .field
+        = f.fields_for :child do |f|
+          = f.label :こどもの名前
+          %br/
+          = f.text_field :name, autofocus: true, autocomplete: "name"
+      .field
         = f.label :アイコン登録
         %br/
         = f.file_field :image

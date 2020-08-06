@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :index]
   before_action :set_events, only: [:create]
+  before_action :set_child, only: [:index, :done]
+
   def index
     if user_signed_in?
       @events = Event.where(user_id: current_user)
@@ -65,6 +67,10 @@ class EventsController < ApplicationController
   end
   def set_user
     @user = User.find(current_user.id)
+  end
+
+  def set_child
+    @child = Child.find(current_user.id)
   end
 
   def set_events
