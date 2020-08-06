@@ -4,7 +4,7 @@
     .header
       = link_to "Chill Log", events_path
     .header-title
-      〜ちゃんの成長記録
+      = @child.name + "ちゃんの成長記録"
     .header-contents
       .header-create
         = link_to "/events/new" do

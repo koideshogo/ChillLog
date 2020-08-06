@@ -59,4 +59,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+  def new
+    @user = User.new
+    @child = @user.build_child
+  end
+
+  def create
+    super
+    user = User.new(configure_permitted_parameters)
+    user.save
+  end
 end
