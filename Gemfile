@@ -80,6 +80,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'rails-i18n'
 
 # 画像アップロード
 gem 'carrierwave'
